@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import logo from "./logo.svg";
 import "./App.css";
 
 /**
@@ -51,7 +50,7 @@ function App() {
 		const handleHeartRateNotification = (event) => {
 			const value = event.target.value;
 
-			setHeartRate(parseHeartRate(event.target.value).heartRate);
+			setHeartRate(parseHeartRate(value).heartRate);
 		};
 
 		navigator.bluetooth
@@ -107,7 +106,6 @@ function App() {
 	};
 
 	function onDisconnected(event) {
-		const device = event.target;
 		// console.log(`Device ${device.name} is disconnected.`);
 		setDevice(null);
 	}
